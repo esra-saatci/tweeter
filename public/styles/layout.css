@@ -26,3 +26,17 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+main {
+  width: 90%;
+  /* text-align: center; */
+  margin: auto;
+  background-color: #f4f1ec;
+
+  /* width: 90%;
+  background-color: #f4f1ec;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto; */
+
+}
