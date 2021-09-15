@@ -1,4 +1,4 @@
-header {
+header.topPage {
   display: flex;
   height: 400px;
   width: 100%;
@@ -8,6 +8,7 @@ header {
   background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png"); 
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 header h2 {
