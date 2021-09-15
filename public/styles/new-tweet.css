@@ -24,6 +24,11 @@
 }
 
 
+.counter.tweetTooLong {
+  color:red;
+}
+
+
 #tweet-text {
   color: #545149;
   font-weight: bold;
@@ -32,6 +37,5 @@
   border-bottom: 4px #545149 solid;
   resize: none;
   width: 100%;
-  padding-bottom: 10px;
 }
 
