@@ -5,33 +5,6 @@
  */
 
 
-// Fake data taken from initial-tweets.json
-
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-
-
 $(document).ready(function() {
 
   //Takes in an array of tweet objects
@@ -39,11 +12,13 @@ $(document).ready(function() {
   //Prepends each returned tweet element to the html section with class 'tweets-container'
   
   const renderTweets = function(tweets) {
+    $('#tweets-container').empty();
     for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
       $('#tweets-container').prepend($tweet);
     }
   };
+
 
   // Takes in a tweet object
   //Returns a tweet <article> element containing the entire HTML structure of the tweet
@@ -69,9 +44,7 @@ $(document).ready(function() {
     return $tweet;
   };
   
-  renderTweets(data);
 
-  
 
   // Add an Event Listener and Prevent the Default Behaviour
   $('form').submit(function(event) {
@@ -79,12 +52,35 @@ $(document).ready(function() {
     //Serialize the form data and send it to the server as a query string
     const serializedData = $(this).serialize();
     
+    $('#tweet-text').val('');
+
     // Submit a POST request that sends the serialized data to the server
     $.post('/tweets', serializedData)
       .then((resp) => {
         console.log(resp);
+        loadTweets();
       });
   });
+
+
+
+  // Fetch tweets (GET) from the server
+  const loadTweets = function() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'JSON',
+      success: (tweets) => {
+        renderTweets(tweets);
+      },
+      error : (error) => {
+        console.log(error);
+      }
+    });
+  };
+
+  loadTweets();
+
 });
   
 
