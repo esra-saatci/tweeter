@@ -70,6 +70,21 @@ $(document).ready(function() {
   };
   
   renderTweets(data);
-});
 
+  
+
+  // Add an Event Listener and Prevent the Default Behaviour
+  $('form').submit(function(event) {
+    event.preventDefault();
+    //Serialize the form data and send it to the server as a query string
+    const serializedData = $(this).serialize();
+    
+    // Submit a POST request that sends the serialized data to the server
+    $.post('/tweets', serializedData)
+      .then((resp) => {
+        console.log(resp);
+      });
+  });
+});
+  
 
