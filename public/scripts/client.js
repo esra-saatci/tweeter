@@ -11,6 +11,13 @@ $(document).ready(function() {
   //Runs each tweet object through our createTweetElement function
   //Prepends each returned tweet element to the html section with class 'tweets-container'
   
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
     for (let tweet of tweets) {
@@ -30,7 +37,7 @@ $(document).ready(function() {
           <span>${tweetObj.user.name}</span>
           <span class="handle">${tweetObj.user.handle}</span>
       </header>
-      <span>${tweetObj.content.text}</span>
+      <span>${escape(tweetObj.content.text)}</span>
       <footer>
         <span>${timeago.format(tweetObj.created_at)}</span>
         <span class="interactOptions">
