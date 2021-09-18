@@ -51,8 +51,18 @@ $(document).ready(function() {
     event.preventDefault();
     //Serialize the form data and send it to the server as a query string
     const serializedData = $(this).serialize();
+
+    // Add some data checks and validations
+    if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
+      alert("Tweets cannot be blank!");
+      return false;
+    } else if ($("#tweet-text").val().length > 140) {
+      alert("Oops! Your tweet is too long!");
+      return false;
+    }
     
-    $('#tweet-text').val('');
+    $("#tweet-text").val('');
+    $('.counter').val(140);
 
     // Submit a POST request that sends the serialized data to the server
     $.post('/tweets', serializedData)
