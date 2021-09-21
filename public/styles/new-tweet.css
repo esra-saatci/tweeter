@@ -128,4 +128,24 @@ article.tweet footer span.interactOptions {
   
 }
 
+#error-message {
+  color:red;
+  font-size: 32px;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+}
+
+#error-container {
+  display: none;
+  box-sizing: content-box;
+  color: red;
+  text-align: center;
+  border: 2px solid red;
+  margin-top: 10px;
+}
+
+#error-container p {
+  margin: 0;
+}
 

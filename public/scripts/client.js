@@ -11,7 +11,8 @@ $(document).ready(function() {
   //Runs each tweet object through our createTweetElement function
   //Prepends each returned tweet element to the html section with class 'tweets-container'
   
-  const escape = function (str) {
+
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -58,16 +59,23 @@ $(document).ready(function() {
     event.preventDefault();
     //Serialize the form data and send it to the server as a query string
     const serializedData = $(this).serialize();
+    $('#error-container').hide();
 
     // Add some data checks and validations
     if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
-      alert("Tweets cannot be blank!");
+      $('#error-message').text('Tweets cannot be blank!');
+      $('#error-container').show();
       return false;
     } else if ($("#tweet-text").val().length > 140) {
-      alert("Oops! Your tweet is too long!");
+      $('#error-message').text('Oops! Your tweet is too long!');
+      $('#error-container').show();
       return false;
     }
+
+
+    $('#error-container').slideUp();
     
+  
     $("#tweet-text").val('');
     $('.counter').val(140);
 
