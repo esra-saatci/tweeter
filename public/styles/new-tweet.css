@@ -186,5 +186,9 @@ article.tweet footer span.interactOptions {
    margin: 0;
    padding: 0;
  }
+
+ article.tweet header img {
+  margin-top: 0;
+}
 }
 
