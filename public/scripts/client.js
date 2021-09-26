@@ -6,19 +6,16 @@
 
 
 $(document).ready(function() {
-
-  //Takes in an array of tweet objects
-  //Runs each tweet object through our createTweetElement function
-  //Prepends each returned tweet element to the html section with class 'tweets-container'
-  
-
+  // Escape function for Cross-Site Scripting
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-
+  //Takes in an array of tweet objects
+  //Runs each tweet object through our createTweetElement function
+  //Prepends each returned tweet element to the html section with class 'tweets-container'
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
     for (let tweet of tweets) {
@@ -52,7 +49,6 @@ $(document).ready(function() {
     return $tweet;
   };
   
-
 
   // Add an Event Listener and Prevent the Default Behaviour
   $('form').submit(function(event) {
