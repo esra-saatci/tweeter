@@ -1,5 +1,11 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom:50px;
+  margin-left: 200px;
+  width: 200%;
+}
 section.new-tweet main {
-  margin: 20px auto;
   padding: 15px;
 }
 
@@ -37,7 +43,6 @@ section.new-tweet, ::placeholder {
   border-bottom: 4px #545149 solid;
   resize: none;
   width: 100%;
-  margin-top: 50px;
 }
 
 #tweet-text:focus {
@@ -147,5 +152,39 @@ article.tweet footer span.interactOptions {
 
 #error-container p {
   margin: 0;
+}
+
+/* Add responsive design for mobile phones */
+@media only screen and (max-width: 767px) {
+  .content {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+  .tweets-container{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  article.tweet header img {
+    margin-top: 0;
+  }
+ }
+
+
+ /* Add responsive design for tablets */
+@media only screen and (min-width: 768px) and (max-width:1023px) {
+ .content {
+   width: 100%;
+   margin: 0;
+   padding: 20px;
+ }
+
+ .tweets-container{
+   width: 100%;
+   margin: 0;
+   padding: 0;
+ }
 }
 

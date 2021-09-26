@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -34,26 +35,30 @@
       <span><b>Write</b> a new tweet</span><i class="fas fa-angle-double-down double-arrow"></i>
     </div>
     </nav>
-
-    <header class="topPage">
-          <img src="/images/profile-hex.png"> 
-      <br>
-          <h2 class="account"><span class = "name">Esra</span> Saatci</h2>
-  </header>
+  
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
-        <div id="error-container">
-          <i class="fas fa-exclamation-triangle"></i><p id="error-message"></p><i class="fas fa-exclamation-triangle"></i>
-        </div>
-        <form action="/tweets/" method="POST">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+      <header class="topPage">
+        <img src="/images/profile-hex.png"> 
+    <br>
+        <h2 class="account"><span class = "name">Esra</span> Saatci</h2>
+      </header> 
+      <div class="content">
+        <section class="new-tweet">
+          <div id="error-container">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p id="error-message"></p>
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <form action="/tweets/" method="POST">
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
             <button type="submit" id="tweetButton">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
-        </form>
-      </section>
-      <section id= "tweets-container"></section>
+          </form>
+        </section>
+        <section id= "tweets-container"></section>
+      </div>
     </main>
   </body>
 </html>

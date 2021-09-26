@@ -22,3 +22,23 @@ nav {
   align-items: center;
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+/* Add responsive design for mobile phones */
+@media only screen and (max-width: 767px) {
+  nav {
+    background-color:#dd9331;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png")
+  }
+}
+
+/* Add responsive design for tablets */
+@media only screen and (min-width: 768px) and (max-width:1023px) {
+  nav {
+    background-color:#dd9331;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
+    height: 75px;
+  }
+}
+
+
+

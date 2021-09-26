@@ -27,7 +27,31 @@ body {
  */
 
 .container {
+  display: flex;
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
+  margin-top: 200px;
+  padding: 0;
   background-color: #f4f1ec;
+  justify-content: space-between;
+}
+
+/* Add responsive design for mobile phones */
+@media only screen and (max-width:767px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0px;
+  } 
+}
+
+/* Add responsive design for tablets */
+@media only screen and (min-width: 768px) and (max-width:1023px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0px;
+  } 
 }

@@ -2,13 +2,11 @@ header.topPage {
   display: flex;
   height: 400px;
   width: 100%;
-  margin-top: 120px;
   flex-direction: column;
   background-color: #dd9331;
-  background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png"); 
+  background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
   justify-content: center;
   align-items: center;
-  z-index: 10;
 }
 
 header h2.account {
@@ -21,6 +19,43 @@ header h2.account {
 
 header span.name {
   font-weight: 900;
+}
+
+
+/* Add responsive design for mobile phones */
+@media only screen and (max-width: 767px) {
+  header.topPage {
+   margin: 0;
+  }
+
+  header img {
+    margin-top: 90px;
+    height: 175px;
+  }
+ 
+  #writeTweet {
+    margin-top: 25px;
+  }
+
+  .tweeterLogo {
+    font-size: larger;
+  }
+}
+ 
+/* Add responsive design for tablets */
+@media only screen and (min-width: 768px) and (max-width:1023px) {
+  header.topPage {
+   margin: 0;
+  }
+
+  header img {
+    margin-top: 60px;
+    height: 225px;
+  }
+ 
+  #writeTweet {
+    margin-top: 25px;
+  }
 }
 
 
